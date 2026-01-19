@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 285 86% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 285 86% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 285 86% 17%;
+
+    --primary: 285 86% 17%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 285 89% 79%;
+    --secondary-foreground: 285 86% 17%;
+
+    --muted: 285 20% 96%;
+    --muted-foreground: 285 20% 45%;
+
+    --accent: 285 89% 79%;
+    --accent-foreground: 285 86% 17%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 285 30% 90%;
+    --input: 285 30% 90%;
+    --ring: 285 89% 79%;
+
+    --radius: 0.75rem;
+
+    /* Custom purple tokens */
+    --lime: 285 89% 79%;
+    --lime-light: 285 89% 85%;
+    --forest: 285 86% 17%;
+    --forest-dark: 285 90% 12%;
+    --forest-light: 285 80% 25%;
+    --cream: 285 30% 97%;
+  }
+
+  .dark {
+    --background: 285 90% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 285 86% 17%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 285 86% 17%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 285 89% 79%;
+    --primary-foreground: 285 86% 17%;
+
+    --secondary: 285 80% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 285 80% 15%;
+    --muted-foreground: 285 20% 65%;
+
+    --accent: 285 89% 79%;
+    --accent-foreground: 285 86% 17%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 285 80% 20%;
+    --input: 285 80% 20%;
+    --ring: 285 89% 79%;
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply inline-flex items-center gap-2 text-sm font-semibold;
+  }
+
+  .section-label-dots {
+    @apply flex gap-0.5;
+  }
+
+  .section-label-dot {
+    @apply w-2 h-2 rounded-full bg-accent;
+  }
+
+  .section-label-dot-outline {
+    @apply w-2 h-2 rounded-full border-2 border-primary;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .card-forest {
+    @apply bg-primary text-primary-foreground rounded-xl p-6;
+  }
+
+  .card-lime {
+    @apply bg-accent text-accent-foreground rounded-xl p-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+}
+
+.animate-progress {
+  animation: progress 2s ease-out forwards;
+}
+
+/* Progress indicator animation */
+@keyframes progress-indicator {
+  from {
+    left: -8px;
+  }
+}
+
+.animate-progress-indicator {
+  animation: progress-indicator 2s ease-out forwards;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}

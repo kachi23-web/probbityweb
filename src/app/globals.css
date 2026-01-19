@@ -1,0 +1,192 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Deep Purple/Indigo gradient tech brand - Vizurio inspired */
+
+@layer base {
+  :root {
+    --background: 240 10% 98%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    /* Primary Deep Purple (#390750) */
+    --primary: 285 86% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Purple (#DB9BFB) */
+    --secondary: 285 90% 79%;
+    --secondary-foreground: 285 86% 18%;
+
+    --muted: 240 10% 96%;
+    --muted-foreground: 240 10% 45%;
+
+    --accent: 285 90% 94%;
+    --accent-foreground: 285 86% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 285 86% 18%;
+
+    --radius: 1rem;
+
+    /* Brand tokens - Updated Purple Palette */
+    --brand-purple-deep: 285 86% 18%;    /* #390750 */
+    --brand-purple: 285 90% 79%;         /* #DB9BFB */
+    --brand-purple-light: 285 85% 85%;   /* Lighter variant */
+    --brand-purple-dark: 285 90% 12%;    /* Darker variant */
+    --brand-accent: 285 90% 79%;         /* Main accent color */
+    --brand-glow: 285 90% 79%;
+
+    --sidebar-background: 240 10% 98%;
+    --sidebar-foreground: 240 10% 26%;
+    --sidebar-primary: 285 86% 18%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 285 90% 94%;
+    --sidebar-accent-foreground: 285 86% 18%;
+    --sidebar-border: 240 10% 91%;
+    --sidebar-ring: 285 86% 18%;
+  }
+
+  .dark {
+    --background: 285 30% 8%;
+    --foreground: 240 10% 95%;
+
+    --card: 285 25% 12%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 285 25% 12%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 285 90% 79%;
+    --primary-foreground: 285 86% 18%;
+
+    --secondary: 285 40% 20%;
+    --secondary-foreground: 285 90% 85%;
+
+    --muted: 285 20% 18%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 285 40% 22%;
+    --accent-foreground: 285 90% 85%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 285 20% 20%;
+    --input: 285 20% 20%;
+    --ring: 285 90% 79%;
+
+    --brand-purple-deep: 285 86% 18%;
+    --brand-purple: 285 90% 79%;
+    --brand-purple-light: 285 85% 85%;
+    --brand-purple-dark: 285 90% 12%;
+    --brand-accent: 285 90% 79%;
+    --brand-glow: 285 60% 50%;
+
+    --sidebar-background: 285 25% 10%;
+    --sidebar-foreground: 240 10% 90%;
+    --sidebar-primary: 285 90% 79%;
+    --sidebar-primary-foreground: 285 86% 18%;
+    --sidebar-accent: 285 30% 18%;
+    --sidebar-accent-foreground: 285 90% 85%;
+    --sidebar-border: 285 20% 18%;
+    --sidebar-ring: 285 90% 79%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Hero gradient - deep purple theme */
+  .gradient-hero {
+    background: linear-gradient(135deg, 
+      #390750 0%, 
+      #4a0a5e 30%, 
+      #5c0d6c 70%, 
+      #390750 100%
+    );
+  }
+
+  /* Primary button gradient */
+  .gradient-primary {
+    background: linear-gradient(135deg, 
+      #390750 0%, 
+      #DB9BFB 50%, 
+      #e8b5fc 100%
+    );
+  }
+
+  /* Secondary button gradient */
+  .gradient-secondary {
+    background: linear-gradient(135deg, 
+      #DB9BFB 0%, 
+      #e8b5fc 100%
+    );
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, 
+      #390750 0%, 
+      #DB9BFB 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow effect for buttons */
+  .glow-primary {
+    box-shadow: 0 0 30px rgba(219, 155, 251, 0.4),
+                0 0 60px rgba(219, 155, 251, 0.2);
+  }
+
+  /* Card gradient backgrounds */
+  .gradient-card {
+    background: linear-gradient(145deg, 
+      rgba(57, 7, 80, 0.1) 0%, 
+      rgba(219, 155, 251, 0.05) 100%
+    );
+  }
+
+  /* Mesh background for hero */
+  .gradient-mesh {
+    background: 
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(219, 155, 251, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(57, 7, 80, 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 40% at 60% 80%, rgba(219, 155, 251, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #390750 0%, #2d0540 100%);
+  }
+
+  /* Light section background */
+  .bg-section-light {
+    background: linear-gradient(180deg, #faf9fb 0%, #f5f2f8 100%);
+  }
+
+  /* Purple accent background */
+  .bg-purple-accent {
+    background: linear-gradient(135deg, rgba(219, 155, 251, 0.1) 0%, rgba(57, 7, 80, 0.05) 100%);
+  }
+}
