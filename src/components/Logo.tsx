@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import logoImage from '@/assets/logo.png';
 
 interface LogoProps {
   className?: string;
@@ -42,7 +43,7 @@ const Logo = ({ className = '', size = 'md', showText = true, textClassName = ''
       {useImage ? (
         <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center p-1 ${className}`}>
           <img 
-            src="src/assets/logo.png"
+            src={logoImage}
             alt="Probbity Tech Logo" 
             className="w-full h-full object-contain"
             onError={() => setUseImage(false)}
