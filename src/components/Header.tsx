@@ -29,8 +29,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-          <img src="img/probbity-logo-3.png" alt="" />
-            {/* <Logo size="md" showText={true} textClassName="hidden sm:block" /> */}
+            <Logo size="md" showText={true} textClassName="hidden sm:block" />
             {/* <span className="text-lg font-bold text-foreground ml-2 sm:hidden">Probbity</span> */}
           </Link>
 
