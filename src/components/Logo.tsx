@@ -45,7 +45,11 @@ const Logo = ({ className = '', size = 'md', showText = true, textClassName = ''
             src="/img/probbity-logo.png"
             alt="Probbity Tech Logo" 
             className="w-full h-full object-contain"
-            onError={() => setUseImage(false)}
+            onError={(e) => {
+              console.error('Logo failed to load:', e);
+              setUseImage(false);
+            }}
+            onLoad={() => console.log('Logo loaded successfully')}
           />
         </div>
       ) : (

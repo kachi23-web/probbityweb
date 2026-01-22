@@ -91,7 +91,7 @@ const TestimonialsSection: React.FC = () => {
             </p>
             <div className="flex justify-center -space-x-3">
               <img
-                src={"home/testimonial-1.png"}
+                src={"home/testimonial-1.jpg"}
                 alt="Customer"
                 className="w-10 h-10 rounded-full border-2 border-primary"
               />
