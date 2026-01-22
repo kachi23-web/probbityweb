@@ -16,7 +16,7 @@ const TestimonialsSection: React.FC = () => {
     company: "Fintech Startup",
     rating: 5,
     content: "The training program completely transformed my career. I went from frontend development to building scalable backend systems. Their mentorship approach and real-world projects gave me the confidence to architect production systems handling millions of transactions.",
-    avatar1: "src/assets/testimonial-1.png",
+    avatar1: "home/testimonial-1.jpg",
     category: "Training Success"
   },
   {

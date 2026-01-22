@@ -4,7 +4,6 @@ import { useState } from "react";
 const WhatsAppButton = () => {
   const [isHovered, setIsHovered] = useState(false);
   
-  // Replace with your actual WhatsApp number (include country code without + sign)
   const whatsappNumber = "+2348156669858"; // Example: "1234567890" for +1 234 567 890
   const message = "Hi! I'm interested in your software development services.";
   
@@ -21,8 +20,8 @@ const WhatsAppButton = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* WhatsApp Icon */}
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 group-hover:bg-green-600 flex items-center justify-center transition-colors">
-          <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+        <div className="w-8 h-8 sm:w-16 sm:h-16 rounded-full bg-green-500 group-hover:bg-green-600 flex items-center justify-center transition-colors">
+          <MessageCircle className="w-4 h-4 sm:w-8 sm:h-8 text-white" />
         </div>
         
         {/* Text that appears on hover */}
