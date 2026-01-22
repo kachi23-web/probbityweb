@@ -29,15 +29,19 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
+            
+
+              <div className="h-10 w-10 rounded-lg bg-accent flex items-center justify-center p-1 ">
+
               <img 
                 src="probbity-logo.png" 
                 alt="App Logo" 
-                className="h-16 w-16 object-contain"
-              />
-               <h3 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
+                className="h-8 w-8 object-contain"
+              /> </div>
+               <h4 className="text-xl md:text-2xl font-bold text-gradient mb-0 mt-6 md:mb-4">
                            Probbity Tech
-            </h3>
-           
+            </h4>
+          
           </Link>
 
           {/* Desktop Navigation */}

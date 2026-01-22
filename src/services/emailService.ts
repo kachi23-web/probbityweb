@@ -37,6 +37,18 @@ export const sendContactEmail = async (formData: ContactFormData): Promise<void>
     }
   } catch (error) {
     console.error('Email sending error:', error);
+    
+    // More detailed error logging
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
+    
+    // Check if it's an EmailJS specific error
+    if (typeof error === 'object' && error !== null && 'text' in error) {
+      console.error('EmailJS error details:', error);
+    }
+    
     throw new Error('Failed to send message. Please try again.');
   }
 };

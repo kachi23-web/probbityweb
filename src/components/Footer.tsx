@@ -50,10 +50,10 @@ const Footer: React.FC = () => {
                         <Logo size="md" showText={true} />
                 </Link> */}
 
-                  <img src="/probbity-logo.png" alt="App Logo" className="h-16 w-16 object-contain"/>
-               <h3 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
+                  <img src="/probbity-logo.png" alt="App Logo" className="h-8 w-8 object-contain"/>
+               <h4 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
                       Probbity Tech
-                   </h3>
+                   </h4>
                         <p className="text-primary-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base">
                         Building scalable software solutions and training technical talent. Proven expertise in engineering and system architecture.
                         </p>
