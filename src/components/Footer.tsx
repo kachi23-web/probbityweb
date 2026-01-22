@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                         <Logo size="md" showText={true} />
                 </Link> */}
 
-                  <img src="/img/probbity-logo.png" alt="App Logo" className="h-16 w-16 object-contain"/>
+                  <img src="/probbity-logo.png" alt="App Logo" className="h-16 w-16 object-contain"/>
                <h3 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
                       Probbity Tech
                    </h3>
