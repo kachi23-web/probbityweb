@@ -28,9 +28,16 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <Logo size="md" showText={true} textClassName="hidden sm:block" />
-            {/* <span className="text-lg font-bold text-foreground ml-2 sm:hidden">Probbity</span> */}
+          <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/img/probbity-logo.png" 
+                alt="App Logo" 
+                className="h-16 w-16 object-contain"
+              />
+               <h3 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
+                           Probbity Tech
+            </h3>
+           
           </Link>
 
           {/* Desktop Navigation */}

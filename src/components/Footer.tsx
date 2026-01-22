@@ -46,9 +46,14 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
               {/* <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center"> */}
-                <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
+                {/* <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
                         <Logo size="md" showText={true} />
-                </Link>
+                </Link> */}
+
+                  <img src="/img/probbity-logo.png" alt="App Logo" className="h-16 w-16 object-contain"/>
+               <h3 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
+                      Probbity Tech
+                   </h3>
                         <p className="text-primary-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base">
                         Building scalable software solutions and training technical talent. Proven expertise in engineering and system architecture.
                         </p>
