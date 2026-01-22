@@ -42,7 +42,7 @@ const Logo = ({ className = '', size = 'md', showText = true, textClassName = ''
       {useImage ? (
         <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center p-1 ${className}`}>
           <img 
-            src="/img/probbity-logo-3.png"
+            src="src/assets/logo.png"
             alt="Probbity Tech Logo" 
             className="w-full h-full object-contain"
             onError={() => setUseImage(false)}
