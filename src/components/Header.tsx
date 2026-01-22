@@ -29,7 +29,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-12 h-12 rounded-lg  flex items-center justify-center">
-              <img src="/img/probbity-logo-3.png" alt="" />
+              <img src="/img/probbity-logo-3.png" alt="logo" />
             </div>
             <span className="text-lg sm:text-xl font-bold text-foreground hidden sm:block">Probbity</span>
             <span className="text-lg font-bold text-foreground sm:hidden">SSE</span>

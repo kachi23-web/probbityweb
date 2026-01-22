@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                         </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1FVKTDvEqd/"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <Facebook className="w-5 h-5" />
@@ -68,13 +68,13 @@ const Footer: React.FC = () => {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/probbity?utm_source=qr&igsh=MTFvbHVsZGd5ZG50dw=="
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/probbity-tech"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
