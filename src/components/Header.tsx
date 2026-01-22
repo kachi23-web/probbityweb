@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,16 +28,9 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent flex items-center justify-center">
-              <img 
-                src="/img/probbity-logo-3.png" 
-                alt="Probbity Tech Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-              />
-            </div>
-            <span className="text-lg sm:text-xl font-bold text-foreground hidden sm:block">Probbity Tech</span>
-            <span className="text-lg font-bold text-foreground sm:hidden">Probbity</span>
+          <Link to="/" className="flex items-center">
+            <Logo size="md" showText={true} textClassName="hidden sm:block" />
+            <span className="text-lg font-bold text-foreground sm:hidden ml-2">Probbity</span>
           </Link>
 
           {/* Desktop Navigation */}
