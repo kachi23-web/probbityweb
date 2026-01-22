@@ -1,7 +1,7 @@
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SectionLabel from "@/components/SectionLabel";
+import SectionBadge from "@/components/SectionBadge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -30,7 +30,7 @@ const About = () => {
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <SectionLabel text="About Our Company" />
+            <SectionBadge>About Our Company</SectionBadge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4">
               Building Talent & Systems<br className="hidden sm:block" />That Scale Globally
             </h2>

@@ -2,7 +2,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicesMarquee from "@/components/ServicesMarquee";
-import SectionLabel from "@/components/SectionLabel";
+import SectionBadge from "@/components/SectionBadge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -153,7 +153,7 @@ const Services = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <SectionLabel text="Our Services" />
+            <SectionBadge>Our Services</SectionBadge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4">
               Build Your Tech Future<br className="hidden sm:block" />with Our Proven Expertise
             </h2>

@@ -1,4 +1,4 @@
-import SectionLabel from "./SectionLabel";
+import SectionBadge from "./SectionBadge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -20,12 +20,12 @@ const About = () => {
     <section id="about-us" className="py-20 bg-cream">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <SectionLabel text="About Us" />
+          <SectionBadge>About Us</SectionBadge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4">
             Empowering Your Success<br />with Digital Expertise
           </h2>
         </div>
-
+ 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left - Images with HIRE US Badge */}
           <div className="relative order-2 lg:order-1">
@@ -168,7 +168,7 @@ const About = () => {
 
             {/* About Us Button */}
             <div className="pt-4">
-              <Button variant="forest" size="lg" className="rounded-full">
+              <Button variant="lime" size="lg" className="rounded-full">
                 About Us
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -188,6 +188,7 @@ const About = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

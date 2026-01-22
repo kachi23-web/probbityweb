@@ -1,4 +1,4 @@
-import SectionLabel from "./SectionLabel";
+import SectionBadge from "./SectionBadge";
 import { Users, FileCheck, Award, BarChart3 } from "lucide-react";
 
 const features = [
@@ -30,10 +30,10 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <SectionLabel text="Why Choose Us" />
+          <SectionBadge>Why Choose Us</SectionBadge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4">
             Why Our Clients Trust Our<br />Technical Expertise
           </h2>

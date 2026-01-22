@@ -1,15 +1,16 @@
 import { Button } from "@/components/ui/button";
-import SectionLabel from "./SectionLabel";
+import SectionBadge from "./SectionBadge";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden">
+    <section className="pt-40 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-cream">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <SectionLabel text="Build People, Software & Systems" />
+            <SectionBadge>Build People, Software & Systems</SectionBadge>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight">
               We Build Talent, Software, and{" "}
@@ -27,9 +28,11 @@ const Hero = () => {
                 Start Your Tech Journey
                 <ArrowRight className="w-5 h-5" />
               </Button>
+
+              <Link to="/academycomingsoon">
               <Button variant="heroOutline" size="lg" className="w-full sm:w-auto">
                 Explore Training Programs
-              </Button>
+              </Button></Link>
             </div>
           </div>
 

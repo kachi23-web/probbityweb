@@ -14,7 +14,7 @@ const Header = () => {
     { label: "About Us", href: "/about" },
     // { label: "Pricing", href: "/#pricing" },
     { label: "Contact", href: "/contact" },
-    { label: "Academy", href: "/#academy" },
+    { label: "Academy", href: "/academycomingsoon" },
   ];
 
   const isActive = (href: string) => {
@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-10 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="fixed top-8 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -57,7 +57,7 @@ const Header = () => {
 
           <div className="hidden lg:block">
             <Link to="/contact">
-              <Button variant="hero">Talk to a Solutions Engineer</Button>
+              <Button variant="hero">Let's Talk</Button>
             </Link>
           </div>
 
@@ -92,7 +92,7 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="hero" className="mt-2 w-full">Talk to a Solutions Engineer</Button>
+              <Button variant="hero" className="mt-2 w-full">Let's Talk</Button>
             </nav>
           </div>
         )}

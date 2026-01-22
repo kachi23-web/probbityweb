@@ -2,14 +2,15 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicesMarquee from "@/components/ServicesMarquee";
-import SectionLabel from "@/components/SectionLabel";
-import { Button } from "@/components/ui/button";
+import SectionBadge from "@/components/SectionBadge";
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { sendContactEmail, type ContactFormData } from "@/services/emailService";
 
 const contactInfo = [
   {
@@ -103,16 +104,28 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-    
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      // Send email using the email service
+      await sendContactEmail(formData as ContactFormData);
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -164,8 +177,8 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <div className="bg-background rounded-2xl p-8 border border-border">
-              <SectionLabel text="Get In Touch" />
-              <h2 className="text-3xl font-extrabold text-foreground mt-4 mb-2">
+            <SectionBadge>Get In Touch</SectionBadge>
+            <h2 className="text-3xl font-extrabold text-foreground mt-4 mb-2">
                 Send Us a Message
               </h2>
               <p className="text-muted-foreground mb-8">
@@ -305,7 +318,7 @@ const Contact = () => {
       {/* <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
-            <SectionLabel text="Our Offices" />
+            <SectionBadge text="Our Offices" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4">
               Visit Our Global Offices
             </h2>
@@ -367,7 +380,7 @@ const Contact = () => {
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              Talk to an Engineer
+              Let's Talk
             </Button>
           </div>
         </div>
