@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
               {/* <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center"> */}
                 <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
-                  <Logo size="md" showText={true} />
+                        <Logo size="md" showText={true} />
                 </Link>
                         <p className="text-primary-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base">
                         Building scalable software solutions and training technical talent. Proven expertise in engineering and system architecture.

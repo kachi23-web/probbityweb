@@ -30,7 +30,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <Logo size="md" showText={true} textClassName="hidden sm:block" />
-            <span className="text-lg font-bold text-foreground sm:hidden ml-2">Probbity</span>
+            {/* <span className="text-lg font-bold text-foreground ml-2 sm:hidden">Probbity</span> */}
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import logoImage from '@/assets/logo.png';
+import { useState, useEffect } from 'react';
 
 interface LogoProps {
   className?: string;
@@ -9,7 +8,7 @@ interface LogoProps {
 }
 
 const Logo = ({ className = '', size = 'md', showText = true, textClassName = '' }: LogoProps) => {
-  const [imageError, setImageError] = useState(false);
+  const [useImage, setUseImage] = useState(true);
   
   const sizeClasses = {
     sm: 'w-8 h-8',
@@ -23,42 +22,43 @@ const Logo = ({ className = '', size = 'md', showText = true, textClassName = ''
     lg: 'text-xl sm:text-2xl'
   };
 
-  // Fallback SVG logo
-  const FallbackLogo = () => (
-    <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center ${className}`}>
+  // SVG logo fallback
+  const SVGLogo = () => (
+    <div className={`${sizeClasses[size]} rounded-lg bg-gradient-to-br from-accent to-lime flex items-center justify-center ${className}`}>
       <svg 
-        viewBox="0 0 24 24" 
-        className="w-6 h-6 text-accent-foreground"
+        viewBox="0 0 32 32" 
+        className="w-6 h-6 sm:w-8 sm:h-8 text-white"
         fill="currentColor"
       >
-        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-        <path d="M8 12l2 2 4-4" stroke="white" strokeWidth="2" fill="none"/>
+        <path d="M8 6h10c3.314 0 6 2.686 6 6s-2.686 6-6 6H8v8H6V6h2zm0 2v8h10c2.21 0 4-1.79 4-4s-1.79-4-4-4H8z"/>
+        <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.8"/>
       </svg>
     </div>
   );
 
   return (
-    <div className="flex items-center gap-2">
-      {!imageError ? (
-        <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center ${className}`}>
+    <>
+      {/* Logo Icon */}
+      {useImage ? (
+        <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center p-1 ${className}`}>
           <img 
-            src={logoImage} 
+            src="/img/probbity-logo-3.png"
             alt="Probbity Tech Logo" 
-            className={`${sizeClasses[size]} object-contain`}
-            onError={() => setImageError(true)}
-            onLoad={() => setImageError(false)}
+            className="w-full h-full object-contain"
+            onError={() => setUseImage(false)}
           />
         </div>
       ) : (
-        <FallbackLogo />
+        <SVGLogo />
       )}
       
+      {/* Logo Text */}
       {showText && (
-        <span className={`${textSizeClasses[size]} font-bold text-foreground ${textClassName}`}>
+        <span className={`${textSizeClasses[size]} font-bold text-primary-foreground ml-2 ${textClassName}`}>
           Probbity Tech
         </span>
       )}
-    </div>
+    </>
   );
 };
 
