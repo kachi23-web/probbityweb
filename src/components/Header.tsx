@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "@/components/Logo";
+import { scheduleConsultation } from "@/services/calendarService";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ const Header = () => {
     { label: "About Us", href: "/about" },
     // { label: "Pricing", href: "/#pricing" },
     { label: "Contact", href: "/contact" },
-    { label: "Academy", href: "/academy" },
+    { label: "Academy", href: "/academycomingsoon" },
   ];
 
   const isActive = (href: string) => {
@@ -62,12 +62,10 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-
+          
 
           <div className="hidden lg:block">
-            <Link to="/contact">
-              <Button variant="hero">Let's Talk</Button>
-            </Link>
+            <Button variant="hero" onClick={scheduleConsultation}>Let's Talk</Button>
           </div>
 
           {/* Mobile Menu Toggle */}

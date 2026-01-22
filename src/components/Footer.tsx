@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Logo from '@/components/Logo';
+import { scheduleConsultation } from '@/services/calendarService';
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -33,8 +32,9 @@ const Footer: React.FC = () => {
             variant="default"
             size="lg"
             className="group whitespace-nowrap"
+            onClick={() => scheduleConsultation()}
           >
-            Get Started
+            Let's Talk
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 sm:space-y-3">
               {["Backend Development", "Frontend Engineering", "AI & Automation", "Cloud & DevOps", "Training Programs"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm sm:text-base">
+                  <a href="/academycomingsoon" className="text-primary-foreground/70 hover:text-accent transition-colors text-sm sm:text-base">
                     {item}
                   </a>
                 </li>
