@@ -65,7 +65,7 @@ const Header = () => {
           
 
           <div className="hidden lg:block">
-            <Button variant="hero" onClick={scheduleConsultation}>Let's Talk</Button>
+            <Button variant="hero" onClick={() => scheduleConsultation()}>Let's Talk</Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -99,7 +99,7 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="hero" className="mt-2 w-full">Let's Talk</Button>
+              <Button variant="hero" className="mt-2 w-full" onClick={() => scheduleConsultation()}>Let's Talk</Button>
             </nav>
           </div>
         )}

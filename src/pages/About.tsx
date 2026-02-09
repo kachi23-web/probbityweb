@@ -2,6 +2,7 @@ import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionBadge from "@/components/SectionBadge";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -9,6 +10,11 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="About Probbity Tech - Expert Software Development Company in Nigeria"
+        description="Learn about Probbity Tech, a leading software development company in Nigeria. We build scalable systems and develop exceptional technical talent for startups and enterprises globally."
+        keywords="software development company Nigeria, web development company Awka, custom software solutions, enterprise software development, startup software development"
+      />
       <TopBar />
       <Header />
       

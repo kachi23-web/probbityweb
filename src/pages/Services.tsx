@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicesMarquee from "@/components/ServicesMarquee";
 import SectionBadge from "@/components/SectionBadge";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -130,6 +131,11 @@ const benefits = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Software Development Services | Custom Web & Mobile App Development - Probbity Tech"
+        description="Comprehensive software development services including custom web applications, mobile app development, SaaS platforms, MVP development, and enterprise solutions. Expert developers for startups and businesses."
+        keywords="custom web application development, mobile app development services, SaaS development, MVP development, enterprise software solutions, business website developers, software development for startups, web development services Nigeria"
+      />
       <TopBar />
       <Header />
       

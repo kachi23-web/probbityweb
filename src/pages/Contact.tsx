@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServicesMarquee from "@/components/ServicesMarquee";
 import SectionBadge from "@/components/SectionBadge";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -130,6 +131,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact Probbity Tech - Get Your Custom Software Solution | Nigeria"
+        description="Contact Probbity Tech for custom web development, mobile app development, and software solutions. Get a free consultation with our expert development team in Nigeria."
+        keywords="contact software development company, web development inquiry, mobile app development quote, custom software consultation, software development Nigeria contact"
+      />
       <TopBar />
       <Header />
       

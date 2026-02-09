@@ -98,6 +98,7 @@ const getNextBusinessDay = (): Date => {
 
 /**
  * Opens Google Calendar in a new tab with the event pre-filled
+ * Then redirects to confirmation page
  */
 export const scheduleConsultation = (
   clientName?: string,
@@ -106,6 +107,11 @@ export const scheduleConsultation = (
 ): void => {
   const calendarUrl = createConsultationEvent(clientName, clientEmail, preferredDate);
   window.open(calendarUrl, '_blank', 'noopener,noreferrer');
+  
+  // Redirect to confirmation page after a short delay
+  setTimeout(() => {
+    window.location.href = '/booking-confirmation';
+  }, 500);
 };
 
 /**

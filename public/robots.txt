@@ -12,3 +12,11 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /coming-soon
+Disallow: /academycomingsoon
+
+# Sitemap
+Sitemap: https://probbity.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
