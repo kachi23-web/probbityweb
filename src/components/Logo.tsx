@@ -1,68 +1,59 @@
-import { useState } from 'react';
+import { cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
+  /** "light" = purple mark + dark text (for light backgrounds); "dark" = white mark + white text */
+  variant?: "light" | "dark";
+  size?: "sm" | "md" | "lg";
   showText?: boolean;
-  textClassName?: string;
 }
 
-const Logo = ({ className = '', size = 'md', showText = true, textClassName = '' }: LogoProps) => {
-  const [useImage, setUseImage] = useState(true);
-  
-  const sizeClasses = {
-    sm: 'w-8 h-8',
-    md: 'w-10 h-10 sm:w-12 sm:h-12',
-    lg: 'w-12 h-12 sm:w-16 sm:h-16'
-  };
+const markSizes = {
+  sm: "h-8",
+  md: "h-10",
+  lg: "h-14",
+};
 
-  const textSizeClasses = {
-    sm: 'text-base',
-    md: 'text-lg sm:text-xl',
-    lg: 'text-xl sm:text-2xl'
-  };
+const textSizes = {
+  sm: { top: "text-sm", bottom: "text-base" },
+  md: { top: "text-base", bottom: "text-lg" },
+  lg: { top: "text-xl", bottom: "text-2xl" },
+};
 
-  // SVG logo fallback
-  const SVGLogo = () => (
-    <div className={`${sizeClasses[size]} rounded-lg bg-gradient-to-br from-accent to-lime flex items-center justify-center ${className}`}>
-      <svg 
-        viewBox="0 0 32 32" 
-        className="w-6 h-6 sm:w-8 sm:h-8 text-white"
-        fill="currentColor"
-      >
-        <path d="M8 6h10c3.314 0 6 2.686 6 6s-2.686 6-6 6H8v8H6V6h2zm0 2v8h10c2.21 0 4-1.79 4-4s-1.79-4-4-4H8z"/>
-        <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.8"/>
-      </svg>
-    </div>
-  );
-
+/** Probbity Tech brand lockup: globe mark + stacked "Probbity / TECH" wordmark. */
+const Logo = ({ className, variant = "light", size = "md", showText = true }: LogoProps) => {
+  const dark = variant === "dark";
   return (
-    <>
-      {/* Logo Icon */}
-      {useImage ? (
-        <div className={`${sizeClasses[size]} rounded-lg bg-accent flex items-center justify-center p-1 ${className}`}>
-          <img 
-            src="/img/probbity-logo.png"
-            alt="Probbity Tech Logo" 
-            className="w-full h-full object-contain"
-            onError={(e) => {
-              console.error('Logo failed to load:', e);
-              setUseImage(false);
-            }}
-            onLoad={() => console.log('Logo loaded successfully')}
-          />
-        </div>
-      ) : (
-        <SVGLogo />
-      )}
-      
-      {/* Logo Text */}
+    <span className={cn("inline-flex items-center gap-2", className)}>
+      <img
+        src={dark ? "/img/logo-mark-white.png" : "/img/logo-mark.png"}
+        alt={showText ? "" : "Probbity Tech"}
+        aria-hidden={showText}
+        className={cn(markSizes[size], "w-auto shrink-0")}
+      />
       {showText && (
-        <span className={`${textSizeClasses[size]} font-bold text-primary-foreground ml-2 ${textClassName}`}>
-          Probbity Tech
+        <span className="flex flex-col leading-none">
+          <span
+            className={cn(
+              textSizes[size].top,
+              "font-bold tracking-tight",
+              dark ? "text-primary-foreground" : "text-[#A53E97]",
+            )}
+          >
+            Probbity
+          </span>
+          <span
+            className={cn(
+              textSizes[size].bottom,
+              "font-extrabold tracking-[0.12em] -mt-0.5",
+              dark ? "text-accent" : "text-primary",
+            )}
+          >
+            TECH
+          </span>
         </span>
       )}
-    </>
+    </span>
   );
 };
 

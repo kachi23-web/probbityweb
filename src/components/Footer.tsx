@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { scheduleConsultation } from '@/services/calendarService';
+import { Link } from 'react-router-dom';
+import Logo from '@/components/Logo';
 
 const Footer: React.FC = () => {
   const footerLinks = {
@@ -45,15 +47,9 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-              {/* <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center"> */}
-                {/* <Link to="/" className="flex items-center gap-2 mb-4 sm:mb-6 justify-center sm:justify-start">
-                        <Logo size="md" showText={true} />
-                </Link> */}
-
-                  <img src="/probbity-logo.png" alt="App Logo" className="h-8 w-8 object-contain"/>
-               <h4 className="text-xl md:text-2xl font-bold text-gradient mb-3 md:mb-4">
-                      Probbity Tech
-                   </h4>
+            <Link to="/" aria-label="Probbity Tech home" className="inline-block mb-4">
+              <Logo variant="dark" size="lg" />
+            </Link>
                         <p className="text-primary-foreground/70 mb-4 sm:mb-6 text-sm sm:text-base">
                         Building scalable software solutions and training technical talent. Proven expertise in engineering and system architecture.
                         </p>

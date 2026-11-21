@@ -193,3 +193,14 @@
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
+
+/* Scroll reveal: hidden until ScrollReveal animates the element in */
+.reveal-pending {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending {
+    opacity: 1;
+  }
+}

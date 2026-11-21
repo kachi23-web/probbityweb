@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Bell, Rocket, Home } from "lucide-react";
+import { ArrowRight, Mail, Bell, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 const ComingSoon = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -69,10 +70,7 @@ const ComingSoon = () => {
         </div>
         {/* Logo/Brand */}
         <div className="mb-8">
-          <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-accent flex items-center justify-center">
-            <Rocket className="w-10 h-10 text-accent-foreground" />
-          </div>
-          <h1 className="text-2xl font-bold text-primary-foreground">Probbity Tech</h1>
+          <Logo variant="dark" size="lg" />
         </div>
 
         {/* Main Heading */}
